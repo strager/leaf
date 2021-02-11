@@ -38,6 +38,7 @@ int main()
     int r = leaf::try_handle_all(
         []() -> leaf::result<int>
         {
+            SetLastError(ERROR_FILE_NOT_FOUND);
             struct reset_LastError { ~reset_LastError() {SetLastError(0); } } reset;
             return leaf::new_error( leaf::windows::e_LastError{} );
         },
