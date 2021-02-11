@@ -5,17 +5,12 @@
 
 #include "visibility_test_lib.hpp"
 #include <boost/leaf/exception.hpp>
+#include <boost/leaf/result.hpp>
 #include <boost/leaf/on_error.hpp>
-
-#if defined(VISIBILITY_TEST_LIB_DYN_LINK)
-#	define EXPORT BOOST_SYMBOL_EXPORT
-#else
-#	define EXPORT
-#endif
 
 namespace leaf = boost::leaf;
 
-leaf::result<void> EXPORT hidden_result()
+leaf::result<void> BOOST_SYMBOL_EXPORT hidden_result()
 {
 	auto load = leaf::on_error( my_info<1>{1}, my_info<3>{3} );
 	return leaf::new_error( my_info<2>{2} );
@@ -23,7 +18,7 @@ leaf::result<void> EXPORT hidden_result()
 
 #ifndef BOOST_NO_EXCEPTIONS
 
-leaf::result<void> EXPORT hidden_throw()
+void BOOST_SYMBOL_EXPORT hidden_throw()
 {
 	auto load = leaf::on_error( my_info<1>{1}, my_info<3>{3} );
 	throw leaf::exception( my_info<2>{2} );

@@ -7,7 +7,7 @@
 // file LICENSE_1_0.txt or copy at http://www.boost.org/LICENSE_1_0.txt)
 
 #include <boost/config.hpp>
-#include <boost/leaf/result.hpp>
+#include <iosfwd>
 
 template <int Tag>
 struct BOOST_SYMBOL_VISIBLE my_info
@@ -20,13 +20,5 @@ struct BOOST_SYMBOL_VISIBLE my_info
         return os << "Test my_info<" << Tag << ">::value = " << x.value;
     }
 };
-
-BOOST_SYMBOL_VISIBLE boost::leaf::result<void> hidden_result();
-
-#ifndef BOOST_LEAF_NO_EXCEPTIONS
-
-BOOST_SYMBOL_VISIBLE boost::leaf::result<void> hidden_throw();
-
-#endif
 
 #endif

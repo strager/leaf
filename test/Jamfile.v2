@@ -99,7 +99,7 @@ run try_catch_error_id_test.cpp ;
 run try_catch_test.cpp ;
 run try_exception_and_result_test.cpp ;
 
-lib visibility_test_lib : visibility_test_lib.cpp : <visibility>hidden <link>shared:<define>VISIBILITY_TEST_LIB_DYN_LINK=1 ;
+lib visibility_test_lib : visibility_test_lib.cpp : <visibility>hidden <link>shared ;
 run visibility_test.cpp visibility_test_lib/<link>shared : : : <visibility>hidden ;
 
 compile-fail _compile-fail-arg_boost_error_info_1.cpp ;

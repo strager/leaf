@@ -7,12 +7,17 @@
 #   include "leaf.hpp"
 #else
 #   include <boost/leaf/handle_errors.hpp>
+#   include <boost/leaf/result.hpp>
 #endif
 
 #include "visibility_test_lib.hpp"
 #include "lightweight_test.hpp"
+#include <sstream>
 
 namespace leaf = boost::leaf;
+
+leaf::result<void> BOOST_SYMBOL_IMPORT hidden_result();
+void BOOST_SYMBOL_IMPORT hidden_throw();
 
 int
 main()
