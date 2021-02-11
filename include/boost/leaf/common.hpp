@@ -59,7 +59,7 @@ namespace windows
     {
         unsigned value;
 
-        explicit e_LastError(int value): value(value) { }
+        explicit e_LastError(unsigned value): value(value) { }
 
 #ifdef _WIN32
         e_LastError(): value(GetLastError()) { }
