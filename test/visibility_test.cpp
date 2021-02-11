@@ -16,8 +16,8 @@
 
 namespace leaf = boost::leaf;
 
-leaf::result<void> BOOST_SYMBOL_IMPORT hidden_result();
-void BOOST_SYMBOL_IMPORT hidden_throw();
+leaf::result<void> hidden_result();
+void hidden_throw();
 
 int
 main()

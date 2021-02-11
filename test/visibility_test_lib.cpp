@@ -10,7 +10,7 @@
 
 namespace leaf = boost::leaf;
 
-leaf::result<void> BOOST_SYMBOL_EXPORT hidden_result()
+leaf::result<void> BOOST_SYMBOL_VISIBLE hidden_result()
 {
 	auto load = leaf::on_error( my_info<1>{1}, my_info<3>{3} );
 	return leaf::new_error( my_info<2>{2} );
@@ -18,7 +18,7 @@ leaf::result<void> BOOST_SYMBOL_EXPORT hidden_result()
 
 #ifndef BOOST_NO_EXCEPTIONS
 
-void BOOST_SYMBOL_EXPORT hidden_throw()
+void BOOST_SYMBOL_VISIBLE hidden_throw()
 {
 	auto load = leaf::on_error( my_info<1>{1}, my_info<3>{3} );
 	throw leaf::exception( my_info<2>{2} );
