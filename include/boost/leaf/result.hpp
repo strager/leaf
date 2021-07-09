@@ -228,8 +228,6 @@ class result
         return what_.kind()==result_discriminant::ctx_ptr ? ctx_->captured_id_ : what_.get_error_id();
     }
 
-    static int init_T_with_U( T && );
-
 protected:
 
     void enforce_value_state() const
@@ -291,6 +289,10 @@ public:
     }
 
 #else
+
+private:
+    static int init_T_with_U( T && );
+public:
 
     // SFINAE: T can be initialized with a U, e.g. result<std::string>("literal").
     template <class U>
