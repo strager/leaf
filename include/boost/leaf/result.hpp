@@ -275,7 +275,7 @@ public:
     {
     }
 
-#if defined(BOOST_STRICT_CONFIG) || (__GNUC__<11)
+#if defined(BOOST_STRICT_CONFIG) || !defined(__clang__)
 
     // This should be the default implementation, but std::is_constructible
     // breaks under COMPILER=/usr/bin/clang++ CXXSTD=11 clang 3.3.
